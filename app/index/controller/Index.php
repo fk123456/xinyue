@@ -10,6 +10,7 @@ use app\index\QfShop;
 use app\model\Source as SourceModel;
 use app\model\SourceCategory as SourceCategoryModel;
 use app\model\ApiList as ApiListModel;
+use app\model\Stat as StatModel;
 
 use Lizhichao\Word\VicWord;
 
@@ -89,6 +90,7 @@ class Index extends QfShop
         View::assign('hotList', $hotList);
         View::assign('config', $config);
         View::assign('rankList', $rankList);
+        View::assign('stat', StatModel::getStats());
         View::assign('fixed', 1);
         View::assign('category_id', 0);
         View::assign('seo_title', $config['app_name'] . ' - ' . $config['app_title']);
@@ -136,6 +138,8 @@ class Index extends QfShop
         if (!$blocked) {
             // 没有屏蔽关键词才去查询
             $list = $this->SourceModel->getList($data);
+            // 搜索计数 +1
+            StatModel::incSearch();
         }
 
 

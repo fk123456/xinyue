@@ -78,6 +78,16 @@
     .searchBox .search .btn .iconfont{
         font-size: 5.8vw;
     }
+    .statBox {
+        gap: 5vw;
+        margin-top: 4vw;
+    }
+    .statBox .statNum {
+        font-size: 5vw;
+    }
+    .statBox .statLabel {
+        font-size: 3vw;
+    }
     .home {
         flex-wrap: wrap;
         margin-top: 10vw;

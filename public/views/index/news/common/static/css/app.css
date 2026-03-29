@@ -263,6 +263,33 @@ a:hover {
     color: var(--theme-theme);
 }
 
+.statBox {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.statBox .statItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+}
+
+.statBox .statNum {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--theme-theme);
+}
+
+.statBox .statLabel {
+    font-size: 13px;
+    color: #999;
+    margin-top: 4px;
+}
+
 .footerBox {
     padding: 30px 15px 20px;
 }

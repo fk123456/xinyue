@@ -9,6 +9,7 @@ use app\api\QfShop;
 use app\model\Source as SourceModel;
 use app\model\Days as DaysModel;
 use app\model\ApiList as ApiListModel;
+use app\model\Stat as StatModel;
 
 class Other extends QfShop
 {
@@ -52,6 +53,8 @@ class Other extends QfShop
             flush();
             exit;
         }
+        // 搜索计数 +1
+        StatModel::incSearch();
         $is_type = input('is_type', 0); //0夸克  2百度 3Uc 4迅雷 -1全部
         $is_show = input('is_show', 0); //0加密网址  1显示网址
 

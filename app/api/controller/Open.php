@@ -6,6 +6,7 @@ use think\App;
 use think\facade\Cache;
 use app\api\QfShop;
 use app\model\Source as SourceModel;
+use app\model\Stat as StatModel;
 
 class Open extends QfShop
 {
@@ -33,6 +34,9 @@ class Open extends QfShop
         if($res['code'] !== 200){
             return jerr($res['message']);
         }
+
+        // 转存计数 +1
+        StatModel::incTransfer();
 
         $isSave = input('isSave')??0;
         if($isSave == 1){
